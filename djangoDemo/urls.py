@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ulyne import views
+from ulyne import views as ulyne_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
+    path('index/', ulyne_view.index),
+    path('add/', ulyne_view.add, name='add'),
+    path('add2/<int:a>/<int:b>', ulyne_view.add2, name='add2'),
+    path('ulyneIndex/', ulyne_view.ulyne_index, name='ulyneIndex')
 ]

@@ -24,3 +24,16 @@ def index(request):
     userList = models.UserInfo.objects.all()
 
     return render(request, "index.html", {"data": userList})
+
+def add(request):
+    a = request.GET['a']
+    b = request.GET['b']
+    c = int(a) + int(b)
+    return HttpResponse(str(c))
+
+def add2(request, a, b):
+    c = int(a) + int(b)
+    return HttpResponse(str(c))
+
+def ulyne_index(request):
+    return render(request, 'ulyne/index.html')
